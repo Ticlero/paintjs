@@ -60,8 +60,12 @@ function handleTouchStart(evnet){
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         console.log(toucthFilling);
     }
-    const x = event.targetTouches[0].pageX; 
-    const y = event.targetTouches[0].pageY;
+    const touchX = event.targetTouches[0].pageX;
+    const touchY = event.targetTouches[0].pageY
+    const offsetX = event.target.offsetLeft;
+    const offsetY = event.target.offsetTop;
+    const x = touchX - offsetX; 
+    const y = touchY - offsetY;
     ctx.beginPath();
     ctx.moveTo(x,y);
     touchPainting = true;
