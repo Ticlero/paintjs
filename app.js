@@ -71,6 +71,7 @@ function handleTouchEndAndCancel(evnet){
 
 function handleTouchMove(event){
     if(touchPainting){
+        event.preventDefault();
         const touchX = event.targetTouches[0].pageX;
         const touchY = event.targetTouches[0].pageY
         const offsetX = event.target.offsetLeft;
