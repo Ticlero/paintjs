@@ -55,6 +55,7 @@ function handleCM(event){
 
 ///////////////////////////
 function handleTouchStart(evnet){
+    event.preventDefault();
     if(toucthFilling){
         ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
@@ -70,8 +71,8 @@ function handleTouchEndAndCancel(evnet){
 }
 
 function handleTouchMove(event){
+    event.preventDefault();
     if(touchPainting){
-        event.preventDefault();
         const touchX = event.targetTouches[0].pageX;
         const touchY = event.targetTouches[0].pageY
         const offsetX = event.target.offsetLeft;
