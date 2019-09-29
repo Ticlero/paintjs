@@ -58,6 +58,7 @@ function handleTouchStart(evnet){
     event.preventDefault();
     if(toucthFilling){
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+        console.log(toucthFilling);
     }
     const x = event.targetTouches[0].pageX; 
     const y = event.targetTouches[0].pageY;
@@ -121,11 +122,9 @@ function handleRangeContorl(event){
 function handleModeClick(event){
     if(filling === true){
         filling = false;
-        toucthFilling = false;
         mode.innerText = "fill";
     }else{
         filling = true;
-        toucthFilling = false;
         mode.innerText ="paint";
         //ctx.fillStyle
     }
@@ -156,7 +155,7 @@ if(range){
 
 if(mode){
     mode.addEventListener("click", handleModeClick);
-    mode.addEventListener("touchstart", handleModeClick);
+    mode.addEventListener("touchstart", handleModeTouch);
 }
 
 if(save){
